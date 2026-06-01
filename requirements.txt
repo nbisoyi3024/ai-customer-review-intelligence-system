@@ -1,0 +1,15 @@
+pandas
+streamlit
+google-generativeai
+openai
+pymongo[srv]
+python-dotenv
+certifi
+matplotlib
+plotly
+numpy
+fastapi
+uvicorn
+requests
+loguru
+chromadb

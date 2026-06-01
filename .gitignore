@@ -1,0 +1,39 @@
+# Environment
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+
+# Logs
+logs/
+
+# Vector DB
+chroma_db/
+
+# OS files
+.DS_Store
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+.idea/
+.idea/inspectionProfiles/profile_settings.xml
+.venv/
+__pycache__/
+*.pyc
+data/test.csv
+data/train.csv
+__init__.py
+data/train.csv
+data/test.csv
+backend/__pycache__/
+utils/__pycache__/
+backend/__init__.py
+utils/__init__.py
+chroma_db/
+logs/
