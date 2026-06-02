@@ -1,8 +1,8 @@
 #Business logic
 
-from llm_analyzer import analyze_review
-from vector_db import store_single_review
-from logger import logger
+from backend.llm_analyzer import analyze_review
+from backend.vector_db import store_single_review
+from backend.logger import logger
 
 def process_review(review):
 

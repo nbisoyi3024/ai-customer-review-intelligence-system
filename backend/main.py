@@ -2,11 +2,12 @@
 import time
 from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
-from logger import logger
+from backend.logger import logger
 
-from llm_analyzer import analyze_review
-from mongo_db import reviews_collection
-from vector_db import store_single_review
+from backend.llm_analyzer import analyze_review
+from backend.mongo_db import reviews_collection
+from backend.vector_db import store_single_review
+
 
 app = FastAPI()
 

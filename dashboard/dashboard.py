@@ -1,10 +1,10 @@
 from pymongo import MongoClient
 import pandas as pd
-from mongo_db import reviews_collection
+from backend.mongo_db import reviews_collection
 import os 
 import streamlit as st
 import matplotlib.pyplot as plt
-from logger import logger
+from backend.logger import logger
 
 client = MongoClient(os.getenv("MONGO_URI"))
 db = client["customer_reviews"]

@@ -1,9 +1,9 @@
 #UI
 import streamlit as st
-from llm_analyzer import analyze_review
-from mongo_db import reviews_collection
-from vector_db import store_single_review,store_dataset_reviews,search_reviews
-from pipeline import process_review
+from backend.llm_analyzer import analyze_review
+from backend.mongo_db import reviews_collection
+from backend.vector_db import store_single_review,store_dataset_reviews,search_reviews
+from backend.pipeline import process_review
 
 
 st.set_page_config(page_title="AI Customer Review Analyzer")

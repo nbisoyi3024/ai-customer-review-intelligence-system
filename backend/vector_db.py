@@ -4,7 +4,7 @@ import uuid
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-from logger import logger 
+from backend.logger import logger 
 
 load_dotenv()
 

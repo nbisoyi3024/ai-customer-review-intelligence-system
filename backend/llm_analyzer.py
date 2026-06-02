@@ -4,7 +4,7 @@ import time
 import json
 from dotenv import load_dotenv
 from openai import OpenAI
-from logger import logger
+from backend.logger import logger
 
 
 load_dotenv()

@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 import certifi
-from logger import logger
+from backend.logger import logger
 
 load_dotenv()
 
