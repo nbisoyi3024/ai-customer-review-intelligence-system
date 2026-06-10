@@ -15,17 +15,25 @@ def analyze_review(review):
 
     prompt = f"""
         Analyze this customer review:
-
+        
+        Allowed categories:
+      - Delivery
+      - Product Quality
+      - Customer Support
+      - Pricing
+      - Packaging
+      - Returns & Refunds
+      - Other 
+       
         Review:
        {review}
 
        Return ONLY valid JSON. 
        
        {{ 
-       "sentiment": "", 
-       "summary": "", "issues": [], 
-       "category": "", 
-       "recommendation": "" 
+       "sentiment": "", "summary": "", 
+       "issues": [], "category": "", 
+         "recommendation": "" 
        }} 
      """
     #------Input validation------

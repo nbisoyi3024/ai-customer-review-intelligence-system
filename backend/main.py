@@ -18,12 +18,12 @@ logger.info("API initialized")
 class ReviewRequest(BaseModel):
     review: str
 
-# Health check 
+# Endpoints
 @app.get("/")
 def home():
     return {"message": "Customer Review Intelligence API"}
 
-@app.get("/")
+@app.get("/health")
 def health():
     return {"status": "ok"}
 
@@ -57,3 +57,4 @@ def analyze(req: ReviewRequest):
 
         logger.error(str(e))
         raise HTTPException(status_code=500, detail="Analysis failed")
+    

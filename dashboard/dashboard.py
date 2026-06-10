@@ -60,3 +60,30 @@ st.bar_chart(df["category"].value_counts())
 
 st.subheader("Sample Data")
 st.dataframe(df.head())
+
+st.subheader("🔍 Explore Top Reviews")
+
+query = st.text_input("Search reviews (e.g. delivery, pricing, support)")
+
+if query:
+
+    results = reviews_collection.find({
+        "$text": {"$search": query}
+    }).limit(10)
+
+    top_reviews = list(results)
+
+    if len(top_reviews) == 0:
+        st.warning("No matching reviews found.")
+    else:
+        for i, review in enumerate(top_reviews, 1):
+
+            st.markdown(f"### Review {i}")
+
+            st.write("📝", review.get("review_text", "No text"))
+
+            st.write("📂 Category:", review.get("category"))
+
+            st.write("😊 Sentiment:", review.get("sentiment"))
+
+            st.divider()

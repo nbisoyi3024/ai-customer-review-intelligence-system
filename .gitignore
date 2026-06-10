@@ -37,4 +37,5 @@ backend/__init__.py
 utils/__init__.py
 chroma_db/
 logs/
-README.md
+readd.md
+data/reviews_labeled.csv

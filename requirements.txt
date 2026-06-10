@@ -10,6 +10,4 @@ plotly
 numpy
 fastapi
 uvicorn
-requests
-loguru
-chromadb
+pytest
