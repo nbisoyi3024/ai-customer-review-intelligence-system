@@ -39,14 +39,14 @@ if st.button("Analyze Review"):
 
         st.success("Analysis Complete ✅")
 
-        st.subheader("Sentiment")
+        st.markdown("**Sentiment**")
         st.write(result["sentiment"])
 
-        st.subheader("Summary")
+        st.markdown("**Summary**")
         st.write(result["summary"])
 
         # if there is no issue, show None
-        st.subheader("Issues")
+        st.markdown("**Issues**")
 
         if result["issues"]:
             for issue in result["issues"]:
@@ -54,10 +54,10 @@ if st.button("Analyze Review"):
         else:
             st.write("No issues found")
 
-        st.subheader("Category")
+        st.markdown("**Category**")
         st.write(result["category"])
 
-        st.subheader("Recommendation")
+        st.markdown("**Recommendation**")
         st.write(result["recommendation"])
 
 st.markdown("### Semantic Search")
@@ -71,7 +71,7 @@ if st.button("Search"):
         results = search_reviews(user_query)
         st.json(results)
 
-        st.subheader("Top Matching Reviews")
+        st.markdown("Top Matching Reviews")
 
         if results:
             for r in results:

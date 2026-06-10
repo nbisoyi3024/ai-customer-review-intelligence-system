@@ -72,6 +72,39 @@ User / Streamlit UI
 - **Error handling** — graceful failure at every layer
 
 ---
+## System Screenshots
+
+### FastAPI - Request(cURL))
+![Swagger UI](screenshots/fastapi_request_curl.png)
+
+### FastAPI - Response(Analysis Output)
+![API Home](screenshots/fastapi_response_analysis.png)
+
+---
+
+### Streamlit Application
+
+### Input Review Interface
+![Input UI](screenshots/streamlit_input.png)
+
+### AI Analysis Output
+![Result UI](screenshots/streamlit_result.png)
+
+### Semantic Search
+![Search UI](screenshots/streamlit_semantic_search.png)
+
+---
+### Dashboard Analytics
+
+### Sentiment Distribution
+![Sentiment](screenshots/dashboard_sentiment_piechart.png)
+
+![Sentiment](screenshots/dashboard_sentiment_bar.png)
+
+### Category Distribution
+![Category](screenshots/dashboard/category.png)
+
+
 
 ##  Tech Stack
 
@@ -101,8 +134,13 @@ CustomerAnalysis/
 │   ├── pipeline.py      ← end-to-end analysis pipeline
 │   ├── logger.py        ← structured logging setup
 │   └── test_main.py     ← pytest unit tests
-├── frontend/
-│   └── dashboard.py     ← Streamlit UI
+│
+├── screenshots/             
+│  ├──fastapi
+│  ├──streamlit
+│  └──dashboard
+│
+├── dashboard.py     ← Streamlit UI 
 ├── requirements.txt
 └── README.md
 ```
