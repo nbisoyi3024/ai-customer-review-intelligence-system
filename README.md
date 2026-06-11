@@ -102,7 +102,7 @@ User / Streamlit UI
 ![Sentiment](screenshots/dashboard_sentiment_bar.png)
 
 ### Category Distribution
-![Category](screenshots/dashboard/category.png)
+![Category](screenshots/dashboard_category.png)
 
 
 
