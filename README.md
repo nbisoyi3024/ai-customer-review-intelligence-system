@@ -263,6 +263,7 @@ This means searching "slow shipping" also finds reviews mentioning "late deliver
 - The difference between **keyword search** (MongoDB) and **semantic search** (ChromaDB)
 - How to add **structured logging** so production issues are easy to debug
 - How to **deploy a FastAPI app** to cloud with environment variable management
+- How to **implement automated API testing** using Pytest and FastAPI TestClient
 
 ---
 
