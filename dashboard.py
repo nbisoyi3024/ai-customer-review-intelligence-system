@@ -33,7 +33,7 @@ st.pyplot(fig)
 
 st.subheader("📊 Review Categories")
 
-category_counts = df["category"].value_counts()
+category_counts = df["category"].value_counts().head(10)
 
 fig2, ax2 = plt.subplots()
 
@@ -55,8 +55,8 @@ st.metric("Total Reviews", len(df))
 st.subheader("Sentiment Distribution")
 st.bar_chart(df["sentiment"].value_counts())
 
-st.subheader("Category Distribution")
-st.bar_chart(df["category"].value_counts())
+st.subheader("Top 10 Categories")
+st.bar_chart(category_counts)
 
 st.subheader("Sample Data")
 st.dataframe(df.head())
