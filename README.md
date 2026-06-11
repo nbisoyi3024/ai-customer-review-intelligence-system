@@ -151,7 +151,7 @@ CustomerAnalysis/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/nbisoyi3024/customer-review-ai
+git clone https://github.com/nbisoyi3024/ai-customer-review-intelligence-system
 cd customer-review-ai
 ```
 
