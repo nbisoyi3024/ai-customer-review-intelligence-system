@@ -152,7 +152,7 @@ CustomerAnalysis/
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/nbisoyi3024/ai-customer-review-intelligence-system
-cd customer-review-ai
+cd ai-customer-review-intelligence-system
 ```
 
 ### 2. Create virtual environment
@@ -194,9 +194,9 @@ pytest backend/test_main.py -v
 
 Expected output:
 ```
-backend/test_main.py::test_home                  PASSED ✅
-backend/test_main.py::test_health                PASSED ✅
-backend/test_main.py::test_analyze_empty_review  PASSED ✅
+backend/test_main.py::test_home                  PASSED 
+backend/test_main.py::test_health                PASSED 
+backend/test_main.py::test_analyze_empty_review  PASSED 
 ```
 
 ---
