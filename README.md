@@ -70,6 +70,7 @@ User / Streamlit UI
 - **Recommendations** — AI suggests improvements based on feedback
 - **Production logging** — structured logs with Loguru
 - **Error handling** — graceful failure at every layer
+- **Automated API testing** — Pytest + FastAPI TestClient for endpoint and validation testing
 
 ---
 ## System Screenshots
@@ -95,6 +96,7 @@ User / Streamlit UI
 
 ---
 ### Dashboard Analytics
+— visualizes sentiment distribution, category breakdowns, and review insights using Streamlit
 
 ### Sentiment Distribution
 ![Sentiment](screenshots/dashboard_sentiment_piechart.png)
@@ -103,7 +105,6 @@ User / Streamlit UI
 
 ### Category Distribution
 ![Category](screenshots/dashboard_category.png)
-
 
 
 ##  Tech Stack
@@ -121,7 +122,12 @@ User / Streamlit UI
 | **Version Control** | Git + GitHub |
 
 ---
+## Dataset
 
+- Customer review dataset used for sentiment and category analysis
+- Downloaded public dataset from Kaggle.
+Kaggle link - "https://www.kaggle.com/datasets/kritanjalijain/amazon-reviews?"
+---
 ##  Project Structure
 
 ```
@@ -136,9 +142,9 @@ CustomerAnalysis/
 │   └── test_main.py     ← pytest unit tests
 │
 ├── screenshots/             
-│  ├──fastapi
-│  ├──streamlit
-│  └──dashboard
+│  ├──fastapi/
+│  ├──streamlit/
+│  └──dashboard/
 │
 ├── dashboard.py     ← Streamlit UI 
 ├── requirements.txt
