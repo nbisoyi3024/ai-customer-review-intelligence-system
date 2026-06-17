@@ -3,13 +3,18 @@ import os
 import time
 import json
 from dotenv import load_dotenv
-from openai import OpenAI
 from backend.logger import logger
+from langchain_openai import AzureChatOpenAI
 
+load_dotenv()  
 
-load_dotenv()
+client = AzureChatOpenAI(
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+    azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
+)
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def analyze_review(review):
 
@@ -47,12 +52,8 @@ def analyze_review(review):
     # Track how long the API call takes
     start_time = time.time()
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[ {"role": "user", "content": prompt} ]
-    )
-
-    content= response.choices[0].message.content.strip()
+    response = client.invoke(prompt)
+    content= response.content
     
     if not content:
            raise ValueError("Empty response from model")
