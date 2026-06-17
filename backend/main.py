@@ -57,4 +57,11 @@ def analyze(req: ReviewRequest):
 
         logger.error(str(e))
         raise HTTPException(status_code=500, detail="Analysis failed")
-    
+
+#top 10 reviews endpoint   
+@app.get("/reviews/top10")
+def get_top10_reviews():
+    reviews = list(reviews_collection.find())
+    categories = [r.get("category", "unknown").lower() for r in reviews]
+    category_counts = {c: categories.count(c) for c in set(categories)}
+    return {"total_reviews": len(reviews), "category_counts": category_counts}
