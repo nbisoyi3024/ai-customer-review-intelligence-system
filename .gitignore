@@ -13,6 +13,7 @@ logs/
 
 # Vector DB
 chroma_db/
+faiss_db
 
 # OS files
 .DS_Store
@@ -39,3 +40,4 @@ chroma_db/
 logs/
 readd.md
 data/reviews_labeled.csv
+backend/chroma_db.py

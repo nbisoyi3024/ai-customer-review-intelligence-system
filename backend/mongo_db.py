@@ -19,8 +19,10 @@ db = client["customer_reviews"]
 
 reviews_collection = db["reviews"]
  
-print(client.list_database_names())
+#for debgging purposes 
+#print(client.list_database_names())
 
 # See one document
-doc = reviews_collection.find_one()
-print(doc)
+
+#doc = reviews_collection.find_one()
+#print(doc)

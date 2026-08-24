@@ -1,6 +1,6 @@
 #Data ingestion
 import pandas as pd
-from vector_db import store_dataset_reviews
+from backend.vector_db import store_dataset_reviews
 
 df = pd.read_csv(
     "data/train.csv",

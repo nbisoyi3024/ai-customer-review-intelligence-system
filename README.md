@@ -4,7 +4,7 @@
 
 An end-to-end **Generative AI system** that analyses customer reviews in real time — detecting sentiment, extracting key issues, generating summaries, and enabling semantic search across review data.
 
-Built with **Python · FastAPI · OpenAI · ChromaDB · MongoDB · Streamlit** and deployed to production on **Render**.
+Built with **Python · FastAPI · OpenAI · FAISS · MongoDB · Streamlit** and deployed to production on **Render**.
 
 ---
 
@@ -51,7 +51,7 @@ User / Streamlit UI
    LLM Pipeline             ← OpenAI GPT-4o-mini
         ↓
   ┌─────────────┐
-  │  ChromaDB   │           ← Semantic search (embeddings)
+  │   FAISS     │           ← Semantic search (embeddings)
   │  MongoDB    │           ← Review storage
   └─────────────┘
         ↓
@@ -71,6 +71,7 @@ User / Streamlit UI
 - **Production logging** — structured logs with Loguru
 - **Error handling** — graceful failure at every layer
 - **Automated API testing** — Pytest + FastAPI TestClient for endpoint and validation testing
+- **Azure OpenAI** - Integrated Azure OpenAI
 
 ---
 ## System Screenshots
@@ -113,8 +114,8 @@ User / Streamlit UI
 |---|---|
 | **Language** | Python 3.11 |
 | **API Framework** | FastAPI |
-| **LLM** | OpenAI GPT-4o-mini |
-| **Vector Database** | ChromaDB (embeddings + semantic search) |
+| **LLM** | Azure OpenAI GPT-4o-mini |
+| **Vector Database** | FAISS(embeddings + semantic search) |
 | **Database** | MongoDB |
 | **Frontend** | Streamlit |
 | **Logging** | Loguru |
@@ -134,9 +135,9 @@ Kaggle link - "https://www.kaggle.com/datasets/kritanjalijain/amazon-reviews?"
 CustomerAnalysis/
 ├── backend/
 │   ├── main.py          ← FastAPI app — all endpoints
-│   ├── llm_analyzer.py  ← OpenAI LLM calls + JSON parsing
+│   ├── llm_analyzer.py  ← Azure OpenAI LLM calls + JSON parsing
 │   ├── mongo_db.py      ← MongoDB connection + operations
-│   ├── vector_db.py     ← ChromaDB embeddings + search
+│   ├── vector_db.py     ← FAISS embeddings + search
 │   ├── pipeline.py      ← end-to-end analysis pipeline
 │   ├── logger.py        ← structured logging setup
 │   └── test_main.py     ← pytest unit tests
@@ -247,9 +248,9 @@ Analyse a customer review and return structured insights.
 ##  How Semantic Search Works
 
 1. Each review is converted to a **vector embedding** using OpenAI
-2. Embeddings are stored in **ChromaDB**
+2. Embeddings are stored in **FAISS**
 3. When searching, the query is also embedded
-4. ChromaDB finds the most **semantically similar** reviews
+4. FAISS finds the most **semantically similar** reviews
 5. Results are returned ranked by similarity score
 
 This means searching "slow shipping" also finds reviews mentioning "late delivery" and "package took weeks" — even without exact keyword matches.
@@ -260,7 +261,7 @@ This means searching "slow shipping" also finds reviews mentioning "late deliver
 
 - How to design **modular AI architectures** — each layer is independent and testable
 - How to handle **LLM output parsing** reliably — validating JSON structure
-- The difference between **keyword search** (MongoDB) and **semantic search** (ChromaDB)
+- The difference between **keyword search** (MongoDB) and **semantic search** (FAISS)
 - How to add **structured logging** so production issues are easy to debug
 - How to **deploy a FastAPI app** to cloud with environment variable management
 - How to **implement automated API testing** using Pytest and FastAPI TestClient

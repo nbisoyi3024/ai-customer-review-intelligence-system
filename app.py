@@ -2,7 +2,7 @@
 import streamlit as st
 from backend.llm_analyzer import analyze_review
 from backend.mongo_db import reviews_collection
-from backend.vector_db import store_single_review,store_dataset_reviews,search_reviews
+from backend.vector_db import (store_single_review,store_dataset_reviews,search_reviews)
 from backend.pipeline import process_review
 
 
@@ -31,11 +31,11 @@ if st.button("Analyze Review"):
             st.write("SAVING TO MONGO")
             # Save to MongoDB
             reviews_collection.insert_one(result)
-            # Store in ChromaDB
-            st.write("CALLING CHROMADB")
+            # Store in FAISS
+            st.write("CALLING FAISS")
             store_single_review(review)
             
-            st.write("CHROMADB FINISHED")
+            st.write("FAISS FINISHED")
 
         st.success("Analysis Complete ✅")
 
